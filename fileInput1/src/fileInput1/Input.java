@@ -19,13 +19,16 @@ public class Input {
 					word+=c;
 				}else {
 					avgLength+=wordLength;
-					avgLength = avgLength/2;
+					if(wordLength == 0) {
+						count+=1;
+					}
 					wordLength = 0;
-					count+=1;
 					System.out.print(word);
 					word = "";
 				}
 			}
+			
+			avgLength = avgLength/count;
 			
 			System.out.println("Average Length: " + avgLength);
 			System.out.println("Word Count: " + count);
